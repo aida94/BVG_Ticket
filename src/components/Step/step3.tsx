@@ -10,10 +10,6 @@ export const Step3: React.FC<{ history: string[] }> = ({history}) => {
     setFareZone(value);
   }
 
-  const onPrevious = () =>  {
-    history.push("./step2");
-  }
-
   const onNext = () =>  {
     history.push("./step4");
     ticketService.setFareZonefunc(fareZone);
@@ -34,7 +30,6 @@ export const Step3: React.FC<{ history: string[] }> = ({history}) => {
         <option value="C">C</option>
       </select>
 
-      <button className="btn btn-primary" onClick={onPrevious}>Previous</button>
       <button className="btn btn-primary" onClick={onNext}>Next</button>
     </div>
   );

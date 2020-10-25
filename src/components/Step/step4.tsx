@@ -10,10 +10,6 @@ export const Step4: React.FC<{ history: string[] }> = ({history}) => {
     setBerlinPass(value === 'true');
   }
 
-  const onPrevious = () =>  {
-    history.push("./step3");
-  }
-
   const onNext = () =>  {
     history.push("./step5");
     ticketService.setBerlinPassfunc(berlinPass);
@@ -34,7 +30,6 @@ export const Step4: React.FC<{ history: string[] }> = ({history}) => {
         <option value="false">No</option>
       </select>
 
-      <button className="btn btn-primary" onClick={onPrevious}>Previous</button>
       <button className="btn btn-primary" onClick={onNext}>Next</button>
     </div>
   );

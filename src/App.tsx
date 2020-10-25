@@ -1,10 +1,8 @@
 import React from 'react';
-// import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import 'App.css';
 import { NavBar } from 'components/Navbar/navbar';
 import { Form } from 'components/Form/form';
-// import { Result } from 'components/Step/result';
 
 function App() {
   return (
@@ -15,11 +13,6 @@ function App() {
 
         <Form/>
 
-      {/*
-        <Router>
-          <Route exact path="/" component={Form} />
-          <Route path="/result" component={Result} />
-        </Router> */}
       </div>
     </div>
   );

@@ -20,8 +20,14 @@ export class TicketService {
     visitAtractions: true
   });
 
-  getTickets() {
-    return this.tickets.length;
+  getNormalTickets() {
+    const normalTickets = this.tickets.filter(e => e.discount === false)
+    return normalTickets;
+  }
+
+  getTuristTickets() {
+    const turistTickets = this.tickets.filter(e => e.discount === true)
+    return turistTickets;
   }
 
   getState() {

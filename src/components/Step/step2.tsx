@@ -10,10 +10,6 @@ export const Step2: React.FC<{ history: string[] }> = ({history}) => {
     setTravelMethod(value);
   }
 
-  const onPrevious = () =>  {
-    history.push("./");
-  }
-
   const onNext = () =>  {
     history.push("./step3");
     ticketService.setTravelMethodfunc(travelMethod);
@@ -34,7 +30,6 @@ export const Step2: React.FC<{ history: string[] }> = ({history}) => {
         <option value="other">Other transports </option>
       </select>
 
-      <button className="btn btn-primary" onClick={onPrevious}>Previous</button>
       <button className="btn btn-primary" onClick={onNext}>Next</button>
     </div>
   );

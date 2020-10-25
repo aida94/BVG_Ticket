@@ -7,6 +7,7 @@ import { Step3 } from 'components/Step/step3';
 import { Step4 } from 'components/Step/step4';
 import { Step5 } from 'components/Step/step5';
 import { Result } from 'components/Step/result';
+import { Tickets } from 'components/Tickets/tickets';
 
 export const Form: React.FC = () => {
 
@@ -24,6 +25,7 @@ export const Form: React.FC = () => {
           <Route path="/step4" component={Step4} />
           <Route path="/step5" component={Step5} />
           <Route path="/result" component={Result} />
+          <Route path="/tickets" component={Tickets} />
         </Router>
 
       </div>
