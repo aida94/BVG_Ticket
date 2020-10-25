@@ -4,15 +4,15 @@ import { ticketService } from 'service/ticketService';
 
 export const Step3: React.FC<{ history: string[] }> = ({history}) => {
 
-  const [fareZone, setFareZone] = useState<'AB' | 'C'>(ticketService.getState().fareZone);
+  const [fareZone, setFareZoneValue] = useState<'AB' | 'C'>(ticketService.getQuestions().fareZone);
 
   const onChange = (value: 'AB' | 'C') =>  {
-    setFareZone(value);
+    setFareZoneValue(value);
   }
 
   const onNext = () =>  {
     history.push("./step4");
-    ticketService.setFareZonefunc(fareZone);
+    ticketService.setFareZone(fareZone);
   }
 
   return (
@@ -20,7 +20,7 @@ export const Step3: React.FC<{ history: string[] }> = ({history}) => {
       <h4 className="mb-5">Answer some simple question to get a better ticket suggestion </h4>
 
       <div className="form-group w-75">
-        <label className="float-left">3. What zone of Berlin do you want to travel? </label>
+        <label className="float-left">3. What zone of Berlin do you want to visit? </label>
 
         <div className="row">
           <div className="col form-check">
@@ -34,8 +34,8 @@ export const Step3: React.FC<{ history: string[] }> = ({history}) => {
               checked={fareZone === 'AB'}/>
             <label className="form-check-label" htmlFor="AB">
               AB
-              <span className="text-muted">(Berlin city area)</span>
             </label>
+            <span className="text-muted">(Berlin city area)</span>
           </div>
           <div className="col form-check">
             <input

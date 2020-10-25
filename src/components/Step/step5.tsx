@@ -4,15 +4,15 @@ import { ticketService } from 'service/ticketService';
 
 export const Step5: React.FC<{ history: string[] }> = ({history}) => {
 
-  const [visitAtractions, setvisitAtractions] = useState<boolean>(ticketService.getState().visitAtractions);
+  const [visitAtractions, setvisitAtractionsValue] = useState<boolean>(ticketService.getQuestions().visitAtractions);
 
   const onChange = (value: boolean) =>  {
-    setvisitAtractions(value);
+    setvisitAtractionsValue(value);
   }
 
   const onNext = () =>  {
     history.push("./result");
-    ticketService.setVisitAtractionsfunc(visitAtractions);
+    ticketService.setVisitAtractions(visitAtractions);
   }
 
   return (
@@ -20,7 +20,7 @@ export const Step5: React.FC<{ history: string[] }> = ({history}) => {
       <h4 className="mb-5">Answer some simple question to get a better ticket suggestion </h4>
 
       <div className="form-group w-75">
-        <label className="float-left">5. Are you planing to visit Berlin Attractions? </label>
+        <label className="float-left">5. Do you plan to visit Berlin Attractions? </label>
 
         <div className="row">
           <div className="col form-check">

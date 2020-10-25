@@ -4,15 +4,15 @@ import { ticketService } from 'service/ticketService';
 
 export const Step1: React.FC<{ history: string[] }> = ({history}) => {
 
-  const [duration, setDuration] = useState<number>(ticketService.getState().duration);
+  const [duration, setDurationValue] = useState<number>(ticketService.getQuestions().duration);
 
   const onChange = (value: number) =>  {
-    setDuration(value);
+    setDurationValue(value);
   }
 
   const onNext = () =>  {
     history.push("./step2");
-    ticketService.setDurationfunc(duration);
+    ticketService.setDuration(duration);
   }
 
   return (
@@ -20,7 +20,7 @@ export const Step1: React.FC<{ history: string[] }> = ({history}) => {
       <h4 className="mb-5">Answer some simple question to get a better ticket suggestion </h4>
 
       <div className="form-group w-50">
-        <label className="float-left">1. How much day will last your travel? </label>
+        <label className="float-left">1. How many days will your stay in Berlin? </label>
         <input
           type="number"
           name="duration"

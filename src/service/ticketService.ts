@@ -1,5 +1,6 @@
 import { ticketList } from 'model/ticketList';
-import { State } from 'model/interfaces';
+import { Questions } from 'model/interfaces';
+
 
 export class TicketService {
   private static instance: TicketService ;
@@ -12,7 +13,7 @@ export class TicketService {
     return TicketService.instance;
   }
 
-  state = new State( {
+  questions = new Questions( {
     duration: 1,
     travelMethod: 'other',
     fareZone: 'AB',
@@ -21,69 +22,68 @@ export class TicketService {
   });
 
   getNormalTickets() {
-    const normalTickets = this.tickets.filter(e => e.discount === false)
+    const normalTickets = this.tickets.filter(data => data.discount === false)
     return normalTickets;
   }
 
-  getTuristTickets() {
-    const turistTickets = this.tickets.filter(e => e.discount === true)
-    return turistTickets;
+  getTouristTickets() {
+    const touristTickets = this.tickets.filter(data => data.discount === true)
+    return touristTickets;
   }
 
-  getState() {
-    console.log(this.tickets)
-    return this.state;
+  getQuestions() {
+    return this.questions;
   }
 
   resetTickets() {
     this.tickets = ticketList;
   }
 
-  setDurationfunc(value: number) {
-    this.state.duration = value;
-    this.tickets = this.tickets.filter(e => e.info.duration <= value)
+  setDuration(value: number) {
+    this.questions.duration = value;
+    this.tickets = this.tickets.filter(data => data.question.duration <= value)
   }
 
-  setTravelMethodfunc(value: 'bike' | 'other') {
-    this.state.travelMethod = value;
-    this.tickets = this.tickets.filter(e => e.info.travelMethod === value)
+  setTravelMethod(value: 'bike' | 'other') {
+    this.questions.travelMethod = value;
+    this.tickets = this.tickets.filter(data => data.question.travelMethod === value)
   }
 
-  setFareZonefunc(value: 'AB' | 'C') {
-    this.state.fareZone = value;
+  setFareZone(value: 'AB' | 'C') {
+    this.questions.fareZone = value;
 
-    if (this.state.travelMethod === 'bike' ) {
+    if (this.questions.travelMethod === 'bike' ) {
       return;
     }
 
     if (value === 'AB') {
-      this.tickets = this.tickets.filter(e => e.info.fareZone === value)
+      this.tickets = this.tickets.filter(data => data.question.fareZone === value)
       return this.tickets;
     }
   }
 
-  setBerlinPassfunc(value: boolean) {
-    this.state.berlinPass = value;
+  setBerlinPass(value: boolean) {
+    this.questions.berlinPass = value;
 
-    if (this.state.travelMethod === 'bike' ) {
+    if (this.questions.travelMethod === 'bike' ) {
       return;
     }
 
     if (value === false) {
-      this.tickets = this.tickets.filter(e => e.info.berlinPass === value)
+      this.tickets = this.tickets.filter(data => data.question.berlinPass === value)
       return this.tickets;
     }
   }
 
-  setVisitAtractionsfunc(value: boolean) {
-    this.state.visitAtractions = value;
+  setVisitAtractions(value: boolean) {
+    this.questions.visitAtractions = value;
 
-    if (this.state.travelMethod === 'bike' ) {
+    if (this.questions.travelMethod === 'bike' ) {
       return;
     }
 
     if (value === false) {
-      this.tickets = this.tickets.filter(e => e.info.visitAtractions === value)
+      this.tickets = this.tickets.filter(data => data.question.visitAtractions === value)
       return this.tickets;
     }
   }

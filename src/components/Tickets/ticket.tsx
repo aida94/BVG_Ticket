@@ -7,12 +7,9 @@ export const Ticket: React.FC<any> = ({data}) => {
       <div className="card">
         <div className="card-body">
           <h5 className="card-title">{data.name}</h5>
-          <h6 className="card-subtitle mb-2 ">{data.time} / {data.price} €</h6>
-          <p className="card-text">Info:
-          Travel Method {data.info.travelMethod}
-          Fare Zone: {data.info.fareZone}
-          {data.info.berlinPass && 'Berlin Pass'}
-          {data.info.visitAtractions && 'Discount for partners'}
+          <h6 className="card-subtitle text-muted mb-2 ">{data.time} / {data.price} €</h6>
+          <hr/>
+          <p className="card-text text-left"> {data.info}
           </p>
         </div>
       </div>

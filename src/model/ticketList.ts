@@ -1,12 +1,13 @@
-import { Ticket } from "model/interfaces";
+import { TicketInterface } from "model/interfaces";
 
-export const ticketList: Ticket[]  = [
+export const ticketList: TicketInterface[]  = [
   {
     name: 'Single trip ticket',
     discount: false,
     time: '2 hour',
     price: 2.90,
-    info: {
+    info: 'Valid for traffic zone AB. All travel method available except bike.',
+    question: {
       berlinPass: false,
       travelMethod: 'other',
       fareZone: 'AB',
@@ -19,7 +20,8 @@ export const ticketList: Ticket[]  = [
     discount: false,
     time: '2 hour',
     price: 1.70,
-    info: {
+    info: 'Valid for traffic zone A or C. Only valid together with a main ticket. All travel method available except bike.',
+    question: {
       berlinPass: false,
       travelMethod: 'other',
       fareZone: 'C',
@@ -32,7 +34,8 @@ export const ticketList: Ticket[]  = [
     discount: false,
     time: '24 hour',
     price: 8.60,
-    info: {
+    info: 'Valid for traffic zone AB. All travel method available except bike.',
+    question: {
       berlinPass: false,
       travelMethod: 'other',
       fareZone: 'AB',
@@ -45,7 +48,8 @@ export const ticketList: Ticket[]  = [
     discount: false,
     time: '24 hour',
     price: 3.50,
-    info: {
+    info: 'Valid for traffic zone A or C. Only valid together with a main ticket. All travel method available except bike.',
+    question: {
       berlinPass: false,
       travelMethod: 'other',
       fareZone: 'C',
@@ -58,7 +62,8 @@ export const ticketList: Ticket[]  = [
     discount: true,
     time: '48 hour',
     price: 19.90,
-    info: {
+    info: 'Valid for traffic zone AB. All travel method available except bike. Discount for partners.',
+    question: {
       berlinPass: false,
       travelMethod: 'other',
       fareZone: 'AB',
@@ -71,7 +76,8 @@ export const ticketList: Ticket[]  = [
     discount: true,
     time: '48 hour',
     price: 21.90,
-    info: {
+    info: 'Valid for traffic zone AB. All travel method available except bike. Discount for partners.',
+    question: {
       berlinPass: false,
       travelMethod: 'other',
       fareZone: 'AB',
@@ -84,7 +90,8 @@ export const ticketList: Ticket[]  = [
     discount: true,
     time: '48 hour',
     price: 21.90,
-    info: {
+    info: 'Valid for traffic zone AB. All travel method available except bike. Discount for partners.',
+    question: {
       berlinPass: false,
       travelMethod: 'other',
       fareZone: 'AB',
@@ -97,7 +104,8 @@ export const ticketList: Ticket[]  = [
     discount: true,
     time: '48 hour',
     price: 23.00,
-    info: {
+    info: 'Valid for traffic zone AB. All travel method available except bike. Discount for partners.',
+    question: {
       berlinPass: false,
       travelMethod: 'other',
       fareZone: 'AB',
@@ -110,7 +118,8 @@ export const ticketList: Ticket[]  = [
     discount: true,
     time: '72 hour',
     price: 51.00,
-    info: {
+    info: 'Valid for traffic zone AB. All travel method available except bike. Discount for partners. Free entry to all Museum.',
+    question: {
       berlinPass: false,
       travelMethod: 'other',
       fareZone: 'AB',
@@ -123,7 +132,8 @@ export const ticketList: Ticket[]  = [
     discount: false,
     time: '7 days',
     price: 34.00,
-    info: {
+    info: 'Valid for traffic zone AB. All travel method available except bike.',
+    question: {
       berlinPass: false,
       travelMethod: 'other',
       fareZone: 'AB',
@@ -136,7 +146,8 @@ export const ticketList: Ticket[]  = [
     discount: false,
     time: '1 month',
     price: 84.00,
-    info: {
+    info: 'Valid for traffic zone AB. All travel method available except bike.',
+    question: {
       berlinPass: false,
       travelMethod: 'other',
       fareZone: 'AB',
@@ -149,7 +160,8 @@ export const ticketList: Ticket[]  = [
     discount: false,
     time: '1 month',
     price: 27.50,
-    info: {
+    info: 'Valid for traffic zone AB. All travel method available except bike. Berlinpass holders.',
+    question: {
       berlinPass: true,
       travelMethod: 'other',
       fareZone: 'AB',
@@ -162,7 +174,8 @@ export const ticketList: Ticket[]  = [
     discount: false,
     time: '2 hour',
     price: 2.00,
-    info: {
+    info: 'Valid for traffic zone AB. Bike travel method.',
+    question: {
       berlinPass: false,
       travelMethod: 'bike',
       fareZone: 'AB',
@@ -175,7 +188,8 @@ export const ticketList: Ticket[]  = [
     discount: false,
     time: '24 hour',
     price: 4.90,
-    info: {
+    info: 'Valid for traffic zone AB. Bike travel method.',
+    question: {
       berlinPass: false,
       travelMethod: 'bike',
       fareZone: 'AB',
@@ -188,7 +202,8 @@ export const ticketList: Ticket[]  = [
     discount: false,
     time: '1 month',
     price: 10.50,
-    info: {
+    info: 'Valid for traffic zone AB. Bike travel method.',
+    question: {
       berlinPass: false,
       travelMethod: 'bike',
       fareZone: 'AB',

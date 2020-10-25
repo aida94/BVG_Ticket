@@ -4,15 +4,15 @@ import { ticketService } from 'service/ticketService';
 
 export const Step2: React.FC<{ history: string[] }> = ({history}) => {
 
-  const [travelMethod, setTravelMethod] = useState<'bike' | 'other'>(ticketService.getState().travelMethod);
+  const [travelMethod, setTravelMethodValue] = useState<'bike' | 'other'>(ticketService.getQuestions().travelMethod);
 
   const onChange = (value: 'bike' | 'other') =>  {
-    setTravelMethod(value);
+    setTravelMethodValue(value);
   }
 
   const onNext = () =>  {
     history.push("./step3");
-    ticketService.setTravelMethodfunc(travelMethod);
+    ticketService.setTravelMethod(travelMethod);
   }
 
   return (

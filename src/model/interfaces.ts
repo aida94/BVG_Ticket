@@ -1,4 +1,4 @@
-export interface StateRaw {
+export interface QuestionInterface {
   duration: number,
   travelMethod: 'bike' | 'other',
   fareZone: 'AB' | 'C',
@@ -6,14 +6,14 @@ export interface StateRaw {
   visitAtractions: boolean
 }
 
-export class State {
+export class Questions {
   duration: number;
   travelMethod: 'bike' | 'other';
   fareZone: 'AB' | 'C';
   berlinPass: boolean;
   visitAtractions: boolean;
 
-  constructor(data: StateRaw) {
+  constructor(data: QuestionInterface) {
     this.duration = data.duration;
     this.travelMethod = data.travelMethod;
     this.fareZone = data.fareZone;
@@ -22,10 +22,11 @@ export class State {
   };
 }
 
-export interface Ticket {
+export interface TicketInterface {
   name: string;
   discount: boolean;
   time: string;
   price: number;
-  info: State;
+  info: string;
+  question: Questions;
 }

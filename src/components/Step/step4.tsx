@@ -4,15 +4,15 @@ import { ticketService } from 'service/ticketService';
 
 export const Step4: React.FC<{ history: string[] }> = ({history}) => {
 
-  const [berlinPass, setBerlinPass] = useState<boolean>(ticketService.getState().berlinPass);
+  const [berlinPass, setBerlinPassValue] = useState<boolean>(ticketService.getQuestions().berlinPass);
 
   const onChange = (value: boolean) =>  {
-    setBerlinPass(value);
+    setBerlinPassValue(value);
   }
 
   const onNext = () =>  {
     history.push("./step5");
-    ticketService.setBerlinPassfunc(berlinPass);
+    ticketService.setBerlinPass(berlinPass);
   }
 
   return (
