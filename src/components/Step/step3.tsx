@@ -16,21 +16,49 @@ export const Step3: React.FC<{ history: string[] }> = ({history}) => {
   }
 
   return (
-    <div className="form-group w-75">
-      <label className="float-left">3. What zone of Berlin do you want to travel? </label>
-      <select
-        name="fareZone"
-        value={fareZone}
-        className="browser-default custom-select"
-        onChange={event => onChange(event.target.value as 'AB' | 'C')}
-        required>
+    <div>
+      <h4 className="mb-5">Answer some simple question to get a better ticket suggestion </h4>
 
-        <option defaultValue=""> </option>
-        <option value="AB">AB</option>
-        <option value="C">C</option>
-      </select>
+      <div className="form-group w-75">
+        <label className="float-left">3. What zone of Berlin do you want to travel? </label>
 
-      <button className="btn btn-primary" onClick={onNext}>Next</button>
+        <div className="row">
+          <div className="col form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="fareZone"
+              id="AB"
+              value="AB"
+              onChange={() => onChange('AB')}
+              checked={fareZone === 'AB'}/>
+            <label className="form-check-label" htmlFor="AB">
+              AB
+              <span className="text-muted">(Berlin city area)</span>
+            </label>
+          </div>
+          <div className="col form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="fareZone"
+              id="C"
+              value="C"
+              onChange={() => onChange('C')}
+              checked={fareZone === 'C'}/>
+            <label className="form-check-label" htmlFor="C">
+              C
+            </label>
+            <span className="text-muted">(Traffic zone A or C. Only valid together with a main ticket.)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="mt-5">
+        <button className="btn btn-next" onClick={onNext}>Next</button>
+      </div>
+
     </div>
   );
 };

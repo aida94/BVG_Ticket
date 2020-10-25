@@ -6,8 +6,8 @@ export const Step4: React.FC<{ history: string[] }> = ({history}) => {
 
   const [berlinPass, setBerlinPass] = useState<boolean>(ticketService.getState().berlinPass);
 
-  const onChange = (value: string) =>  {
-    setBerlinPass(value === 'true');
+  const onChange = (value: boolean) =>  {
+    setBerlinPass(value);
   }
 
   const onNext = () =>  {
@@ -16,21 +16,48 @@ export const Step4: React.FC<{ history: string[] }> = ({history}) => {
   }
 
   return (
-    <div className="form-group w-75">
-      <label className="float-left">4. Do you have Berlin Pass? </label>
-      <select
-        name="berlinPass"
-        value={berlinPass.toString()}
-        className="browser-default custom-select"
-        onChange={event => onChange(event.target.value)}
-        required>
+    <div>
+      <h4 className="mb-5">Answer some simple question to get a better ticket suggestion </h4>
 
-        <option defaultValue=""> </option>
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-      </select>
+      <div className="form-group w-75">
+        <label className="float-left">4. Do you have Berlin Pass? </label>
 
-      <button className="btn btn-primary" onClick={onNext}>Next</button>
+        <div className="row">
+          <div className="col form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="berlinPass"
+              id="true"
+              value="true"
+              onChange={() => onChange(true)}
+              checked={berlinPass === true}/>
+            <label className="form-check-label" htmlFor="true">
+              Yes
+            </label>
+            <span className="text-muted">(Personal ticket for holders of the Berlinpass)</span>
+          </div>
+          <div className="col form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="berlinPass"
+              id="false"
+              value="false"
+              onChange={() => onChange(false)}
+              checked={berlinPass === false}/>
+            <label className="form-check-label" htmlFor="false">
+             No
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="mt-5">
+        <button className="btn btn-next" onClick={onNext}>Next</button>
+      </div>
+
     </div>
   );
 };

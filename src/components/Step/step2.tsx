@@ -16,21 +16,48 @@ export const Step2: React.FC<{ history: string[] }> = ({history}) => {
   }
 
   return (
-    <div className="form-group w-75">
-      <label className="float-left">2. What travel methods do you want to use? </label>
-      <select
-        name="travelMethod"
-        value={travelMethod}
-        className="browser-default custom-select"
-        onChange={event => onChange(event.target.value as 'bike' | 'other')}
-        required>
+    <div>
+      <h4 className="mb-5">Answer some simple question to get a better ticket suggestion </h4>
 
-        <option defaultValue=""> </option>
-        <option value="bike">Bike</option>
-        <option value="other">Other transports </option>
-      </select>
+      <div className="form-group w-75">
+        <label className="float-left">2. What travel methods do you want to use? </label>
 
-      <button className="btn btn-primary" onClick={onNext}>Next</button>
+        <div className="row">
+          <div className="col form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="travelMethod"
+              id="bike"
+              value="bike"
+              onChange={(e) => onChange(e.target.value as 'bike' | 'other' )}
+              checked={travelMethod === 'bike'}/>
+            <label className="form-check-label" htmlFor="bike">
+              Bike
+            </label>
+          </div>
+          <div className="col form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="travelMethod"
+              id="other"
+              value="other"
+              onChange={(e) => onChange(e.target.value as 'bike' | 'other' )}
+              checked={travelMethod === 'other'}/>
+            <label className="form-check-label" htmlFor="other">
+              Other Transport
+            </label>
+            <span className="text-muted">(bus, tram, metro, train)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="mt-5">
+        <button className="btn btn-next" onClick={onNext}>Next</button>
+      </div>
+
     </div>
   );
 };

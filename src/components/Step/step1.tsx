@@ -16,19 +16,24 @@ export const Step1: React.FC<{ history: string[] }> = ({history}) => {
   }
 
   return (
-    <div className="form-group w-75">
-      <label className="float-left">1. How much day will last your travel? </label>
+    <div>
+      <h4 className="mb-5">Answer some simple question to get a better ticket suggestion </h4>
 
-      <input
-        type="number"
-        name="duration"
-        value={duration}
-        className="form-control"
-        onChange={event => onChange(parseInt(event.target.value) || duration)}
-        min='1'
-        required/>
+      <div className="form-group w-50">
+        <label className="float-left">1. How much day will last your travel? </label>
+        <input
+          type="number"
+          name="duration"
+          value={duration}
+          className="form-control"
+          onChange={event => onChange(parseInt(event.target.value) || duration)}
+          min='1'
+          required/>
+      </div>
 
-      <button className="btn btn-primary" onClick={onNext} disabled={!!!duration}>Next</button>
+      <div className="mt-5">
+        <button className="btn btn-next" onClick={onNext}>Next</button>
+      </div>
 
     </div>
   );

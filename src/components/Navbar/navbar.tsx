@@ -3,9 +3,10 @@ import React from 'react';
 export const NavBar: React.FC = () => {
 
   return (
-    <nav className="navbar navbar-dark bg-dark text-white">
-      <div className="d-flex justify-content-center">
-        BVG Ticket Suggestion
+    <nav className="navbar navbar-dark bg-dark justify-content-center">
+      <div className="">
+      <a href='/' className="text-white"> BVG Ticket Suggestion</a>
+
       </div>
     </nav>
   );

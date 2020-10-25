@@ -14,10 +14,10 @@ export class TicketService {
 
   state = new State( {
     duration: 1,
-    travelMethod: 'bike',
+    travelMethod: 'other',
     fareZone: 'AB',
-    berlinPass: true,
-    visitAtractions: true
+    berlinPass: false,
+    visitAtractions: false
   });
 
   getNormalTickets() {
@@ -33,6 +33,10 @@ export class TicketService {
   getState() {
     console.log(this.tickets)
     return this.state;
+  }
+
+  resetTickets() {
+    this.tickets = ticketList;
   }
 
   setDurationfunc(value: number) {
