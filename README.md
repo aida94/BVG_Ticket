@@ -6,8 +6,8 @@ I used React Hooks with typescript. For the design, I tried to keep the similar 
 
 ## Install
 
-    $ git clone https://github.com/aida94/bvg_ticket_suggestion.git
-    $ cd bvg_ticket_suggestion
+    $ git clone https://github.com/aida94/Ticket_Suggestion.git
+    $ cd Ticket_Suggestion
     $ npm install
 
 ### Start & watch
