@@ -1,4 +1,4 @@
-# BVG Ticket Suggestion
+# Ticket Suggestion
 
 This is a React App that cames in help for Berlin visitor and citizen. You can answer some simple questions to get a better suggestion about tickets you may buy.</br>
 Question are based in the main differences of the tickets, like duration, travel method, visiting zone, berlinpass holder.
